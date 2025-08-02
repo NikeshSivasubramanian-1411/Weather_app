@@ -1,92 +1,142 @@
-*{
+* {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Includes padding and border in element's total width/height */
+    font-family: "Segoe UI", sans-serif; /* Sets default font for all elements */
+}
+
+/* Set full height for HTML and body to support full-screen layout */
+html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+    height: 100%;
 }
-body{
-    background: #222;
+
+/* Again ensures full height (duplicate but safe) */
+body, html {
+    height: 100%;
 }
-.card{
-    width: 90%;
-    max-width: 470px;
-    background: linear-gradient(135deg, #00feba,#5b548a);
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    text-align: center;
+
+/* Fullscreen animated/dynamic background container */
+.background {
+    background-size: cover; /* Stretch background to cover container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    position: absolute; /* Puts it behind other elements */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Sends background behind card */
 }
-.search{
-    width: 100%;
+
+/* Main weather info card */
+.card {
+    max-width: 420px; /* Max width for responsiveness */
+    margin: 50px auto; /* Center card with top margin */
+    padding: 20px 30px; /* Inner spacing */
+    border-radius: 20px; /* Rounded corners */
+    background: rgba(0, 0, 0, 0.5); /* Transparent dark background */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    backdrop-filter: blur(8px); /* Blur background behind card */
+}
+
+/* Title styles */
+.header .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtitle styles */
+.header .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Search bar and button layout */
+.search {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.search input{
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
-    color: #555;
-    padding: 10px 25px;
-    height: 60px;
+
+/* Search input styles */
+.search input {
+    padding: 10px 15px;
+    width: 70%;
     border-radius: 30px;
-    flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
 }
-.search button{
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
+
+/* Search button styles */
+.search button {
+    border: none;
+    background-color: #fff;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
-.search button img{
-    width: 16px;
-}
-.weather-icon{
-    width: 170px;
-    margin-top: 30px;
-}
-.weather h1{
-    font-size: 80px;
-    font-weight: 500;
-}
-.weather h2{
-    font-size: 45px;
-    font-weight: 400;
-    margin-top: -10px;
-}
-.details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
-}
-.col{
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-.col img{
     width: 40px;
-    margin-right: 10px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.humidity, .wind{
-    font-size: 28px;
-    margin-top: -6px;
+
+/* Search icon size */
+.search button img {
+    width: 20px;
 }
-.weather{
+
+/* Weather icon style */
+.weather-icon {
+    width: 100px;
+    margin: 20px 0;
+}
+
+/* Weather container hidden initially (shown with JS) */
+.weather {
     display: none;
 }
-.error{
-    text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    display:none;
+
+/* Temperature font */
+.temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* City name font */
+.city {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Weather details section layout */
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+/* Each weather detail column */
+.details .col {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Weather icons inside details (humidity, wind) */
+.details img {
+    width: 30px;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    display: none;
+    margin-top: 15px;
 }

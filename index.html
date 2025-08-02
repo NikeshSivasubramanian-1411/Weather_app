@@ -1,43 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="en"> <!-- Root element with language set to English -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 for all characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on all devices -->
+    <title>Weather App</title> <!-- Title shown in the browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS stylesheet -->
 </head>
 <body>
+    <!-- Background container (covered via CSS for dynamic background images) -->
+    <div class="background"></div>
+
+    <!--  Main card container for all content -->
     <div class="card">
+
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">SkyCast</h1> <!-- Main title of the app -->
+            <p class="subtitle">Get real-time weather updates for any city around the world.</p> <!-- Subtitle description -->
+        </header>
+
+        <!-- Search Section -->
         <div class="search">
-            <input type="text" placeholder="Enter city name": spellcheck="false">
-            <button><img src="images/search.png" ></button>
+            <input type="text" placeholder="Enter city name" spellcheck="false"> <!-- Input for city name -->
+            <button><img src="images/search.png" alt="Search"></button> <!-- Search button with image -->
         </div>
-        <div class="error">
+
+        <!-- Error message (hidden by default) shown when invalid city entered -->
+        <div class="error" style="display: none;">
             <p>Invalid City Name</p>
         </div>
-        <div class="weather">
-            <img src="images/rain.png" class="weather-icon">
-            <h1 class="temp">22°C</h1>
-            <h2 class="city">NewYork</h2>
-            <div class="details">
-                <div class="col">
-                    <img src="images/humidity.png">
-                    <div>
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <img src="images/wind.png">
-                    <div>
-                        <p class="wind">15 km/h</p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<script src="script.js"></script>
 
+        <!-- Weather Information Display (hidden initially) -->
+        <div class="weather" style="display: none;">
+            <img src="images/rain.png" class="weather-icon" alt="Weather Icon"> <!-- Icon representing the current weather -->
+            <h1 class="temp">22°C</h1> <!-- Displays the temperature -->
+            <h2 class="city">New York</h2> <!-- Displays the city name -->
+
+            <!-- Weather Details Section -->
+            <div class="details">
+
+                <!-- Humidity Section -->
+                <div class="col">
+                    <img src="images/humidity.png" alt="Humidity Icon"> <!-- Humidity icon -->
+                    <div>
+                        <p class="humidity">50%</p> <!-- Humidity percentage -->
+                        <p>Humidity</p> <!-- Label -->
+                    </div>
+                </div>
+
+                <!-- Wind Speed Section -->
+                <div class="col">
+                    <img src="images/wind.png" alt="Wind Icon"> <!-- Wind icon -->
+                    <div>
+                        <p class="wind">15 km/h</p> <!-- Wind speed -->
+                        <p>Wind Speed</p> <!-- Label -->
+                    </div>
+                </div>
+
+            </div> <!-- End .details -->
+        </div> <!-- End .weather -->
+
+    </div> <!-- End .card -->
+
+    <script src="script.js"></script> <!-- External JavaScript for functionality -->
 </body>
 </html>
