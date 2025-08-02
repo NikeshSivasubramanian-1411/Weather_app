@@ -140,3 +140,11 @@ body, html {
     display: none;
     margin-top: 15px;
 }
+/*
+    Summary:
+    This CSS file defines the visual styling for the Weather App.
+    It handles layout, typography, spacing, background images, and responsive design.
+    Key features include a full-screen background, a glassmorphism-style weather card,
+    and styled input/search elements for user interaction.
+    Weather and error sections are hidden initially and shown dynamically via JavaScript.
+*/

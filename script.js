@@ -106,3 +106,12 @@ searchBtn.addEventListener("click", () => {
 window.addEventListener("load", () => {
     background.style.backgroundImage = "url('images/wind.gif')"; // Set wind.gif as default background
 });
+
+/*
+    Summary:
+    This JavaScript file handles the core functionality of the Weather App.
+    It connects to the OpenWeatherMap API to fetch real-time weather data based on user input.
+    It updates the DOM with the temperature, city name, humidity, wind speed, and weather icon.
+    It also dynamically changes the background image based on weather conditions.
+    Error handling is included for invalid city names.
+*/
