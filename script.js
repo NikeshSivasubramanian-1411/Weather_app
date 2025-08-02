@@ -44,6 +44,6 @@ document.querySelector(".error").style.display="none";
 }
 searchBtn.addEventListener("click",()=>{
     checkWeather(searchBox.value);
-})
+})///adsgas
 
 checkWeather();
